@@ -26,8 +26,11 @@ class TelegramLogHandler extends AbstractProcessingHandler
 
     private function formatRecord(LogRecord $record): string
     {
+        $appName = config('notifications.app_name') ?: config('app.name', 'App');
+
         $header = sprintf(
-            '%s <b>%s</b> — <code>%s</code>',
+            '<b>[%s]</b> | %s <b>%s</b> — <code>%s</code>',
+            e($appName),
             $this->emojiFor($record->level),
             e($record->level->getName()),
             e($record->channel),

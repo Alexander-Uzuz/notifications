@@ -15,6 +15,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | Prepended to every outgoing notification as a header so recipients
+    | can identify which project sent the message when multiple projects
+    | share the same Telegram chat. Defaults to the app.name config value.
+    |
+    */
+
+    'app_name' => env('NOTIFICATIONS_APP_NAME'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Queue Settings
     |--------------------------------------------------------------------------
     |

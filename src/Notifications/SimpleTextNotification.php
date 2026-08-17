@@ -31,7 +31,7 @@ class SimpleTextNotification extends Notification implements ShouldQueue
     {
         $message = TelegramMessage::create()
             ->to($notifiable->routeNotificationForTelegram())
-            ->content($this->text);
+            ->content($this->buildContent());
 
         $parseMode = config('notifications.channels.telegram.parse_mode', 'HTML');
 
@@ -40,6 +40,13 @@ class SimpleTextNotification extends Notification implements ShouldQueue
         }
 
         return $message;
+    }
+
+    private function buildContent(): string
+    {
+        $appName = config('notifications.app_name') ?: config('app.name', 'App');
+
+        return '<b>['.e($appName).']</b>'."\n\n".$this->text;
     }
 
     public function backoff(): array
