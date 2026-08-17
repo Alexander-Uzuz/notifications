@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": "^8.3",
-        "illuminate/notifications": "^12.0",
-        "illuminate/support": "^12.0",
-        "illuminate/log": "^12.0",
-        "laravel-notification-channels/telegram": "^7.0"
+        "php": "^8.2",
+        "illuminate/notifications": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/log": "^11.0|^12.0",
+        "laravel-notification-channels/telegram": "^5.0|^7.0"
     },
     "autoload": {
         "psr-4": {
